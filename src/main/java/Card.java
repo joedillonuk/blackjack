@@ -19,7 +19,7 @@ public class Card {
     }
 
     public int getValueFromEnum(){
-        System.out.println(Arrays.toString(SuitType.values()));
+//        System.out.println(Arrays.toString(SuitType.values()));
         return this.rank.getValue();
     }
 

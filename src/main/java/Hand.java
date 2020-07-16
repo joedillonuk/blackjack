@@ -1,18 +1,22 @@
 import java.util.ArrayList;
 
 public class Hand {
-    private ArrayList<Card> playerHand;
+    private ArrayList<Card> dealerHand;
 
     public Hand(){
-        this.playerHand = new ArrayList<Card>();
+        this.dealerHand = new ArrayList<Card>();
     }
 
     public int getHandSize() {
-        return this.playerHand.size();
+        return this.dealerHand.size();
     }
 
     public void receiveCard(Deck deck){
         Card card = deck.removeCard();
-        playerHand.add(card);
+        dealerHand.add(card);
+    }
+
+    public Card removeCard(){
+        return this.dealerHand.remove(0);
     }
 }

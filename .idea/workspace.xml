@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1b7a24a3-fc41-4676-a378-f0d92cb4bc71" name="Default Changelist" comment="" />
+    <list default="true" id="1b7a24a3-fc41-4676-a378-f0d92cb4bc71" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/GameTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/PlayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Hand.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +24,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -24,6 +36,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1elGGRZrO9uKwgl6a83DDFcp6Si" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -31,51 +44,53 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
   </component>
-  <component name="RunManager" selected="JUnit.HandTest.canReceiveCardFromDeck">
-    <configuration name="All in enums" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.GameTest.gameIsADraw">
+    <configuration name="GameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="enums" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DeckTest.canShuffleDeck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="enums" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DeckTest" />
-      <option name="METHOD_NAME" value="canShuffleDeck" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HandTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="enums" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HandTest" />
+      <option name="MAIN_CLASS_NAME" value="GameTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HandTest.canReceiveCardFromDeck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GameTest.gameDealsCardsToOnePlayersHand" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="enums" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HandTest" />
-      <option name="METHOD_NAME" value="canReceiveCardFromDeck" />
+      <option name="MAIN_CLASS_NAME" value="GameTest" />
+      <option name="METHOD_NAME" value="gameDealsCardsToOnePlayersHand" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HandTest.handStartsEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GameTest.gameIsADraw" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="enums" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HandTest" />
-      <option name="METHOD_NAME" value="handStartsEmpty" />
+      <option name="MAIN_CLASS_NAME" value="GameTest" />
+      <option name="METHOD_NAME" value="gameIsADraw" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="enums" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PlayerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerTest.playerCanReceiveCardsToHand" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="enums" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PlayerTest" />
+      <option name="METHOD_NAME" value="playerCanReceiveCardsToHand" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -83,11 +98,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.HandTest.canReceiveCardFromDeck" />
-        <item itemvalue="JUnit.All in enums" />
-        <item itemvalue="JUnit.HandTest" />
-        <item itemvalue="JUnit.HandTest.handStartsEmpty" />
-        <item itemvalue="JUnit.DeckTest.canShuffleDeck" />
+        <item itemvalue="JUnit.GameTest.gameIsADraw" />
+        <item itemvalue="JUnit.GameTest" />
+        <item itemvalue="JUnit.GameTest.gameDealsCardsToOnePlayersHand" />
+        <item itemvalue="JUnit.PlayerTest" />
+        <item itemvalue="JUnit.PlayerTest.playerCanReceiveCardsToHand" />
       </list>
     </recent_temporary>
   </component>
@@ -105,47 +120,51 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="510" y="131" key="#com.intellij.ide.util.MemberChooser" timestamp="1594895776068">
+    <state x="100" y="123" width="1240" height="677" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1594905168963">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="510" y="131" key="#com.intellij.ide.util.MemberChooser/0.23.1440.877/1440.123.1280.777@0.23.1440.877" timestamp="1594895776068" />
+    <state x="100" y="123" width="1240" height="677" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.23.1440.877/1440.123.1280.777@0.23.1440.877" timestamp="1594905168963" />
+    <state x="510" y="131" key="#com.intellij.ide.util.MemberChooser" timestamp="1594904038692">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="510" y="131" key="#com.intellij.ide.util.MemberChooser/0.23.1440.877/1440.123.1280.777@0.23.1440.877" timestamp="1594904038692" />
     <state x="1893" y="219" key="#com.intellij.ide.util.MemberChooser/0.23.1440.877/1440.123.1280.777@1440.123.1280.777" timestamp="1594890145090" />
-    <state width="1398" height="285" key="GridCell.Tab.0.bottom" timestamp="1594897323247">
+    <state width="1398" height="284" key="GridCell.Tab.0.bottom" timestamp="1594907914047">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="285" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.123.1280.777@0.23.1440.877" timestamp="1594897323247" />
+    <state width="1398" height="284" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.123.1280.777@0.23.1440.877" timestamp="1594907914047" />
     <state width="1238" height="197" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.123.1280.777@1440.123.1280.777" timestamp="1594890321141" />
-    <state width="1398" height="285" key="GridCell.Tab.0.center" timestamp="1594897323246">
+    <state width="1398" height="284" key="GridCell.Tab.0.center" timestamp="1594907914046">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="285" key="GridCell.Tab.0.center/0.23.1440.877/1440.123.1280.777@0.23.1440.877" timestamp="1594897323246" />
+    <state width="1398" height="284" key="GridCell.Tab.0.center/0.23.1440.877/1440.123.1280.777@0.23.1440.877" timestamp="1594907914046" />
     <state width="1238" height="197" key="GridCell.Tab.0.center/0.23.1440.877/1440.123.1280.777@1440.123.1280.777" timestamp="1594890321141" />
-    <state width="1398" height="285" key="GridCell.Tab.0.left" timestamp="1594897323245">
+    <state width="1398" height="284" key="GridCell.Tab.0.left" timestamp="1594907914046">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="285" key="GridCell.Tab.0.left/0.23.1440.877/1440.123.1280.777@0.23.1440.877" timestamp="1594897323245" />
+    <state width="1398" height="284" key="GridCell.Tab.0.left/0.23.1440.877/1440.123.1280.777@0.23.1440.877" timestamp="1594907914046" />
     <state width="1238" height="197" key="GridCell.Tab.0.left/0.23.1440.877/1440.123.1280.777@1440.123.1280.777" timestamp="1594890321140" />
-    <state width="1398" height="285" key="GridCell.Tab.0.right" timestamp="1594897323246">
+    <state width="1398" height="284" key="GridCell.Tab.0.right" timestamp="1594907914047">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="285" key="GridCell.Tab.0.right/0.23.1440.877/1440.123.1280.777@0.23.1440.877" timestamp="1594897323246" />
+    <state width="1398" height="284" key="GridCell.Tab.0.right/0.23.1440.877/1440.123.1280.777@0.23.1440.877" timestamp="1594907914047" />
     <state width="1238" height="197" key="GridCell.Tab.0.right/0.23.1440.877/1440.123.1280.777@1440.123.1280.777" timestamp="1594890321141" />
-    <state width="1398" height="285" key="GridCell.Tab.1.bottom" timestamp="1594897323522">
+    <state width="1398" height="471" key="GridCell.Tab.1.bottom" timestamp="1594907562004">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="285" key="GridCell.Tab.1.bottom/0.23.1440.877/1440.123.1280.777@0.23.1440.877" timestamp="1594897323522" />
-    <state width="1398" height="285" key="GridCell.Tab.1.center" timestamp="1594897323521">
+    <state width="1398" height="471" key="GridCell.Tab.1.bottom/0.23.1440.877/1440.123.1280.777@0.23.1440.877" timestamp="1594907562004" />
+    <state width="1398" height="471" key="GridCell.Tab.1.center" timestamp="1594907562003">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="285" key="GridCell.Tab.1.center/0.23.1440.877/1440.123.1280.777@0.23.1440.877" timestamp="1594897323521" />
-    <state width="1398" height="285" key="GridCell.Tab.1.left" timestamp="1594897323520">
+    <state width="1398" height="471" key="GridCell.Tab.1.center/0.23.1440.877/1440.123.1280.777@0.23.1440.877" timestamp="1594907562003" />
+    <state width="1398" height="471" key="GridCell.Tab.1.left" timestamp="1594907562003">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="285" key="GridCell.Tab.1.left/0.23.1440.877/1440.123.1280.777@0.23.1440.877" timestamp="1594897323520" />
-    <state width="1398" height="285" key="GridCell.Tab.1.right" timestamp="1594897323522">
+    <state width="1398" height="471" key="GridCell.Tab.1.left/0.23.1440.877/1440.123.1280.777@0.23.1440.877" timestamp="1594907562003" />
+    <state width="1398" height="471" key="GridCell.Tab.1.right" timestamp="1594907562004">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="285" key="GridCell.Tab.1.right/0.23.1440.877/1440.123.1280.777@0.23.1440.877" timestamp="1594897323522" />
+    <state width="1398" height="471" key="GridCell.Tab.1.right/0.23.1440.877/1440.123.1280.777@0.23.1440.877" timestamp="1594907562004" />
     <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1594894435252">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -166,7 +185,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/HandTest.java</url>
-          <line>24</line>
+          <line>25</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
