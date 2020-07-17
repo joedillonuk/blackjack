@@ -42,6 +42,7 @@ public class Game {
                 winner = "Sorry, it's a draw";
             } else if (player.getHandCardValue() > highest) {
                 System.out.println(winner);
+                highest = player.getHandCardValue();
                 winner = player.getName() + " is the winner, with a hand value of " + player.getHandCardValue() + "!!!";
                 System.out.println(winner);
             }
