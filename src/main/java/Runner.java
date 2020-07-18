@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Runner {
 
     private int numberOfPlayers;
@@ -5,23 +7,52 @@ public class Runner {
     private Game game;
     private Deck deck;
     private Player player;
+    private Hand hand;
 
     public static void main(String[] args) {
         Game game = new Game("Blackjack");
         System.out.println("Welcome! Let's play " + game.getName());
 
         //get number of players
+        int numberOfPlayers = game.getNumberOfPlayers();
+        System.out.println("Okay, let's play " + game.getName() + " with " + numberOfPlayers + " players!");
 
+        // Make the dealer a player
+        Player player = new Player("Dealer");
+        game.addPlayers(player);
 
         //get the names of each player
+        for(int i = 0; i < numberOfPlayers; i++ ){
+            System.out.println("Please type a name for player " + (i + 1));
+//            Player player = new Player("temp");
+            player = player.createPlayer();
+            game.addPlayers(player);
+        }
+
+        System.out.println("Okay! Let's play with " + (game.getAmountOfPlayers() - 1) + " players");
+
 
 
         //create the deck
+        Deck deck = new Deck();
+        deck.addAllCardsToDeck();
+        System.out.println("The deck has " + deck.getDeckSize() + " cards");
+
+
         //shuffle the deck
+        deck.shuffleDeck();
+        System.out.println("That's them nice and shuffled");
 
 
-        // give dealer a card
+        // give the hand a card
+        Hand hand = new Hand();
+
         // give each player a card
+        game.dealCard(hand, deck);
+        game.dealCard(hand, deck);
+        game.dealCard(hand, deck);
+
+        game.comparePlayerHands();
 
 
         // give deal another card
@@ -48,7 +79,7 @@ public class Runner {
 
         // compare hands of remaining players in line with blackjack rules/card hierarchy
 
-        
+
 
 
 

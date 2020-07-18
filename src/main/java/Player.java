@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Player {
 
@@ -39,5 +40,17 @@ public class Player {
         return total;
     }
 
+    public String getPlayerNameFromScanner(){
+        Scanner myObj = new Scanner(System.in);
+        return myObj.nextLine();
+    }
 
+    public Player createPlayer(){
+        String name = getPlayerNameFromScanner();
+        return new Player(name);
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

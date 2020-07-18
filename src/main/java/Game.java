@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class Game {
     private String name;
@@ -48,6 +49,15 @@ public class Game {
             }
         }
             return winner;
+        }
+
+        public int getNumberOfPlayers() {
+            Scanner myObj = new Scanner(System.in);
+            System.out.println("How many players?");
+            System.out.println("(please choose a number between 1 and 4)");
+
+            int players = myObj.nextInt();
+            return players;
         }
     }
 

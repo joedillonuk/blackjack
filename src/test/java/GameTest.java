@@ -79,4 +79,9 @@ public class GameTest {
         player1.getHandCardValue();
         assertEquals("Sorry, it's a draw", game.comparePlayerHands());
     }
+
+//    @Test
+//    public void canGetNumberOfPlayers() {
+//        assertEquals(2, );
+//    }
 }
