@@ -66,8 +66,14 @@ public class Player {
         System.out.println("");
         System.out.println(ConsoleColors.GREEN +  this.getName() + ConsoleColors.RESET + " has " + this.getHandCardValue() + " points.");
         if(this.getHandCardValue() > 21){
+            this.setStatus("Bust");
             System.out.println(ConsoleColors.RED_BOLD + "BUST!" + ConsoleColors.RESET);
         }
+        if(this.getHandCardValue() == 21 & this.playerHand.size() == 2){
+            this.setStatus("Blackjack");
+            System.out.println(ConsoleColors.YELLOW + "BLACKJACK!" + ConsoleColors.RESET);
+        }
+
         System.out.println("");
     }
 
@@ -104,9 +110,16 @@ public class Player {
 
             }
 
-            if (this.getHandCardValue() <= 21 && this.getHandCardValue() > 16) {
+            if (this.getHandCardValue() < 21 && this.getHandCardValue() > 16) {
                 move = 's';
                 this.setStatus("Stick");
+            }
+
+            if (this.getHandCardValue() == 21) {
+                move = 's';
+                if(this.playerHand.size() == 2){this.setStatus("Blackjack");
+                    System.out.println(ConsoleColors.YELLOW + this.getName() + " has Blackjack!" + ConsoleColors.RESET);
+                }
             }
 
             if (this.getHandCardValue() > 21) {
@@ -142,8 +155,12 @@ public class Player {
 
                 }
             } else if (this.getHandCardValue() == 21) {
+                if(this.playerHand.size() == 2){this.setStatus("Blackjack");
+                    System.out.println(ConsoleColors.YELLOW + this.getName() + " has Blackjack!" + ConsoleColors.RESET);
+                }
                 System.out.println(this.getName() + " you're on 21 points! You should probably stick. Type [s] to Stick or [d] to draw" + ConsoleColors.RED_BRIGHT + " (Don't Draw)." + ConsoleColors.RESET);
                 move = scanner.next().charAt(0);
+
 
             } else if (this.getHandCardValue() > 21) {
                 this.setStatus("Bust");
@@ -184,5 +201,13 @@ public class Player {
             }
         }
         return result;
+    }
+    public int getDrawScore(){
+        int total = 0;
+        for(Card card : playerHand){
+            total += card.getRank().ordinal();
+            if(card.getRank() == RankType.ACE){total += 10;}
+        }
+        return total;
     }
 }
