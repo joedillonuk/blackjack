@@ -90,11 +90,28 @@ public class Game {
         }
 
         public int getNumberOfPlayers() {
+            int players = 0;
             Scanner myObj = new Scanner(System.in);
             System.out.println("How many players?");
-            System.out.println("(please choose a number between 1 and 4)");
+            System.out.println(ConsoleColors.BLUE_BRIGHT + "(please type a number between 1 and 7)" + ConsoleColors.RESET);
+            while (!myObj.hasNextInt()) {
+                System.out.println("That's not a number!");
+                myObj.next();
+            }
+            players = myObj.nextInt();
+            while(players <1 || players > 7){
+                System.out.println(ConsoleColors.RED + "Sorry, you need to type a number between 1 and 7" + ConsoleColors.RESET);
+                while (!myObj.hasNextInt()) {
+                    System.out.println("That's not a number!");
+                    System.out.println(ConsoleColors.BLUE_BRIGHT + "(please type a number between 1 and 7)" + ConsoleColors.RESET);
 
-            int players = myObj.nextInt();
+                    myObj.next();
+                }
+
+                players = myObj.nextInt();
+
+
+            }
             return players;
         }
 
