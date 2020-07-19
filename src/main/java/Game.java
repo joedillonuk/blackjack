@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -39,13 +40,13 @@ public class Game {
         int highest = 0;
         for (Player player : players) {
             if (highest == player.getHandCardValue()) {
-                System.out.println(winner);
+//                System.out.println(winner);
                 winner = "Sorry, it's a draw";
             } else if (player.getHandCardValue() > highest) {
-                System.out.println(winner);
+//                System.out.println(winner);
                 highest = player.getHandCardValue();
                 winner = player.getName() + " is the winner, with a hand value of " + player.getHandCardValue() + "!!!";
-                System.out.println(winner);
+//                System.out.println(winner);
             }
         }
             return winner;
@@ -59,6 +60,24 @@ public class Game {
             int players = myObj.nextInt();
             return players;
         }
+
+        public void displayPlayersCurrentHand(Player player) {
+            System.out.println("Press enter" + "[" + "\u21A9" + "]" + " to see " + player.getName() +  "'s current hand.");
+            pressAnyKeyToContinue();
+        player.displayPlayersCurrentCards();
+        }
+
+            private void pressAnyKeyToContinue()
+            {
+//                System.out.println("Press" + );
+                try
+                {
+                    System.in.read();
+                }
+                catch(Exception e)
+                {}
+            }
+
     }
 
 

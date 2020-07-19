@@ -40,6 +40,18 @@ public class Player {
         return total;
     }
 
+    public void displayPlayersCurrentCards(){
+        System.out.println(this.getName() + " has:");
+        for(Card card : playerHand){
+            String clubColor = ConsoleColors.RED_BOLD;
+            if(card.getSuit() == SuitType.CLUBS){clubColor = ConsoleColors.WHITE_BRIGHT;}
+            if(card.getSuit() == SuitType.SPADES){clubColor = ConsoleColors.WHITE_BRIGHT;}
+            System.out.println(card.getRank() + " of " + clubColor + ConsoleColors.BLACK_BACKGROUND + card.getSuit().getValue() + ConsoleColors.RESET);
+        }
+        System.out.println("");
+        System.out.println(this.getName() + " has a total of " + this.getHandCardValue() + " points.");
+    }
+
     public String getPlayerNameFromScanner(){
         Scanner myObj = new Scanner(System.in);
         return myObj.nextLine();

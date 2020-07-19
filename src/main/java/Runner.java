@@ -47,12 +47,17 @@ public class Runner {
         // give the hand a card
         Hand hand = new Hand();
 
-        // give each player a card
-        game.dealCard(hand, deck);
+        // give each player initial two-card hand
         game.dealCard(hand, deck);
         game.dealCard(hand, deck);
 
-        game.comparePlayerHands();
+
+        for(Player person : game.getPlayers()){
+
+            game.displayPlayersCurrentHand(person);
+        }
+
+        System.out.println(game.comparePlayerHands());
 
 
         // give deal another card
