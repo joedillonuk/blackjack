@@ -6,6 +6,8 @@ import java.util.Scanner;
 public class Game {
     private String name;
     private ArrayList<Player> players;
+    private Player player;
+    private ArrayList<Player> winners;
 
     public Game(String name){
         this.name = name;
@@ -55,6 +57,36 @@ public class Game {
             }
         }
             return winner;
+        }
+
+        public void decideBlackjackWinner(){
+            winners = new ArrayList<Player>();
+            int highest = 0;
+            for(Player player : players){
+                if(player.getStatus() != "Bust"){
+                    if(player.getHandCardValue() >= highest) {
+                        highest = player.getHandCardValue();
+                    }
+                }
+            }
+
+            for(Player player : players){
+                if(player.getStatus() != "Bust"){
+                    if(player.getHandCardValue() == highest) {
+                        winners.add(player);
+                    }
+                }
+            }
+
+            if(winners.size() == 1){
+                System.out.println(winners.get(0).getName() + " is the winner with a score of " + highest);
+            }else if(winners.size() > 1){
+                System.out.println("We have " + winners.size() + " players on " + highest + " points.");
+                for(Player player : winners){
+                    System.out.println(ConsoleColors.GREEN + player.getName() + ConsoleColors.RESET);
+                }
+            }
+
         }
 
         public int getNumberOfPlayers() {

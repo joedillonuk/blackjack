@@ -40,6 +40,17 @@ public class Player {
         for (Card card : this.playerHand){
             total += card.getValueFromEnum();
         }
+        if(this.hasAce()){
+            if( (total + 10) < 22 ){
+                total += 10;
+                if(total == 21 & this.playerHand.size() == 2){
+                    this.setStatus("Blackjack");
+                }
+            }
+
+
+        }
+
         return total;
     }
 
@@ -54,6 +65,10 @@ public class Player {
         }
         System.out.println("");
         System.out.println(ConsoleColors.GREEN +  this.getName() + ConsoleColors.RESET + " has " + this.getHandCardValue() + " points.");
+        if(this.getHandCardValue() > 21){
+            System.out.println(ConsoleColors.RED_BOLD + "BUST!" + ConsoleColors.RESET);
+        }
+        System.out.println("");
     }
 
     public String getPlayerNameFromScanner(){
@@ -86,14 +101,12 @@ public class Player {
         if(this.getName() == "Dealer"){
             if (this.getHandCardValue() < 17) {
                 move = 'd';
-                System.out.println("The Dealer has decided to Draw another card");
 
             }
 
             if (this.getHandCardValue() <= 21 && this.getHandCardValue() > 16) {
-                move = 'd';
+                move = 's';
                 this.setStatus("Stick");
-                System.out.println(ConsoleColors.GREEN_BRIGHT + "The Dealer is Sticking on " + this.getHandCardValue() + ConsoleColors.RESET);
             }
 
             if (this.getHandCardValue() > 21) {
@@ -128,7 +141,6 @@ public class Player {
 
 
                 }
-                System.out.println("this is chosen move: " + move);
             } else if (this.getHandCardValue() == 21) {
                 System.out.println(this.getName() + " you're on 21 points! You should probably stick. Type [s] to Stick or [d] to draw" + ConsoleColors.RED_BRIGHT + " (Don't Draw)." + ConsoleColors.RESET);
                 move = scanner.next().charAt(0);
@@ -142,8 +154,11 @@ public class Player {
         }
                 if(move == 's'){
                     this.setStatus("Stick");
-                    System.out.println(ConsoleColors.GREEN + this.getName() + ConsoleColors.RESET + " decided to stick on " + this.getHandCardValue() + " points");
+                    System.out.println(ConsoleColors.GREEN + this.getName()  + " decided to stick on " + this.getHandCardValue() + " points" + ConsoleColors.RESET);
                 }
+        if(move == 'd'){
+            System.out.println(ConsoleColors.GREEN + this.getName()  + " decided to draw another card " + ConsoleColors.RESET);
+        }
                 pressAnyKeyToContinue();
         return move;
 
@@ -159,5 +174,15 @@ public class Player {
         }
         catch(Exception e)
         {}
+    }
+
+    public boolean hasAce() {
+        Boolean result = false;
+        for(Card card : playerHand){
+            if(card.getRank() == RankType.ACE ){
+                result = true;
+            }
+        }
+        return result;
     }
 }

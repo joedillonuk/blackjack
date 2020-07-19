@@ -78,8 +78,10 @@ public class Runner {
         // give each player who is still in the game another card
         while(game.anyonePlaying()) {
             for (Player person : game.getPlayers()) {
-                char move = person.decideNextMove();
+
                 if(person.getStatus() == "Playing") {
+                    char move = person.decideNextMove();
+
                     if (person.getName() == "Dealer") {
                         if (move == 'd') {
                             game.dealSingleCard(hand, deck, person);
@@ -89,14 +91,17 @@ public class Runner {
                     }
 
                     if (person.getName() != "Dealer") {
+                        if(person.getStatus() == "Playing") {
 
                             game.dealSingleCard(hand, deck, person);
                             game.displayPlayersCurrentHand(person);
-
+                        }
                     }
                 }
             }
         }
+
+        game.decideBlackjackWinner();
 
 
         // if dealer has <16 score, give dealer another card - should dealer be a Player object?
