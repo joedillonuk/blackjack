@@ -15,7 +15,9 @@ public class Runner {
 
         //get number of players
         int numberOfPlayers = game.getNumberOfPlayers();
+
         System.out.println("Okay, let's play " + game.getName() + " with " + numberOfPlayers + " players!");
+        System.out.println("");
 
         // Make the dealer a player
         Player player = new Player("Dealer");
@@ -27,10 +29,10 @@ public class Runner {
 //            Player player = new Player("temp");
             player = player.createPlayer();
             game.addPlayers(player);
+
         }
-
+        System.out.println("");
         System.out.println("Okay! Let's play with " + (game.getAmountOfPlayers() - 1) + " players");
-
 
 
         //create the deck
@@ -51,18 +53,50 @@ public class Runner {
         game.dealCard(hand, deck);
         game.dealCard(hand, deck);
 
+        System.out.println("");
 
         for(Player person : game.getPlayers()){
-
+            game.pressAnyKeyToContinue();
+//            System.out.print("\033[H\033[2J");
             game.displayPlayersCurrentHand(person);
         }
 
-        System.out.println(game.comparePlayerHands());
+//        System.out.println(game.comparePlayerHands());
+        game.pressAnyKeyToContinue();
+
+        System.out.println("");
+        System.out.println("");
+
+        // give dealer another card
+//        for(Player person : game.getPlayers()){
+//            person.decideNextMove();
+//
+//
+//            }
 
 
-        // give deal another card
-        // give each player another card
+        // give each player who is still in the game another card
+        while(game.anyonePlaying()) {
+            for (Player person : game.getPlayers()) {
+                char move = person.decideNextMove();
+                if(person.getStatus() == "Playing") {
+                    if (person.getName() == "Dealer") {
+                        if (move == 'd') {
+                            game.dealSingleCard(hand, deck, person);
+                            game.displayPlayersCurrentHand(person);
 
+                        }
+                    }
+
+                    if (person.getName() != "Dealer") {
+
+                            game.dealSingleCard(hand, deck, person);
+                            game.displayPlayersCurrentHand(person);
+
+                    }
+                }
+            }
+        }
 
 
         // if dealer has <16 score, give dealer another card - should dealer be a Player object?

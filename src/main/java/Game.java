@@ -35,6 +35,11 @@ public class Game {
         }
     }
 
+    public void dealSingleCard(Hand hand, Deck deck, Player player){
+        hand.receiveCard(deck);
+        player.receiveHand(hand);
+    }
+
     public String comparePlayerHands() {
         String winner = null;
         int highest = 0;
@@ -62,14 +67,14 @@ public class Game {
         }
 
         public void displayPlayersCurrentHand(Player player) {
-            System.out.println("Press enter" + "[" + "\u21A9" + "]" + " to see " + player.getName() +  "'s current hand.");
-            pressAnyKeyToContinue();
+//            System.out.println(ConsoleColors.BLUE_BRIGHT + "Press enter" + "[" + "\u21A9" + "]" + " to see " + player.getName() +  "'s current hand." + ConsoleColors.RESET);
+//            pressAnyKeyToContinue();
         player.displayPlayersCurrentCards();
         }
 
-            private void pressAnyKeyToContinue()
+            public void pressAnyKeyToContinue()
             {
-//                System.out.println("Press" + );
+                System.out.println(ConsoleColors.BLUE_BRIGHT + "Press enter" + "[" + "\u21A9" + "]" + " to continue." + ConsoleColors.RESET);
                 try
                 {
                     System.in.read();
@@ -78,6 +83,15 @@ public class Game {
                 {}
             }
 
+    public boolean anyonePlaying() {
+        Boolean result = false;
+        for(Player person : players){
+            if(person.getStatus() == "Playing"){
+                result = true;
+            }
+        }
+        return result;
     }
+}
 
 
