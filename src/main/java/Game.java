@@ -8,6 +8,7 @@ public class Game {
     private ArrayList<Player> players;
     private Player player;
     private ArrayList<Player> winners;
+    private ArrayList<Player> drawWinners;
 
     public Game(String name){
         this.name = name;
@@ -85,6 +86,27 @@ public class Game {
                 for(Player player : winners){
                     System.out.println(ConsoleColors.GREEN + player.getName() + ConsoleColors.RESET);
                 }
+                drawWinners = new ArrayList<Player>();
+                int drawTotal = 0;
+                for(Player player : winners){
+                    if(player.getStatus() == "Blackjack"){
+                        drawWinners.add(player);
+                    }
+                }
+                if(drawWinners.size() == 1){
+                    System.out.println(drawWinners.get(0).getName() + " wins with" + ConsoleColors.YELLOW + " BLACKJACK!" + ConsoleColors.RESET );
+                }
+                if(drawWinners.size() == 0){
+                    for(Player player : winners){
+                        if(player.getDrawScore() >= drawTotal){
+                            drawWinners.add(player);
+                        }
+                    }
+                }
+                if(drawWinners.size() == 1 & drawWinners.get(0).getStatus() != "Blackjack"){
+                    System.out.println(drawWinners.get(0).getName() + " wins" + ConsoleColors.RESET );
+                }
+
             }
 
         }
